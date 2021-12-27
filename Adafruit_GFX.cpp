@@ -1164,6 +1164,18 @@ boolean Adafruit_GFX_Button::contains(int16_t x, int16_t y) {
           (y >= _y1) && (y < (_y1 + _h)));
 }
 
+// Draw a hexagon
+void Adafruit_GFX::drawHexagon(int16_t x, int16_t y, int16_t w, int16_t h,
+        uint16_t color) {
+    startWrite();
+    drawLine(x, y, x+w/2, y-h, color);
+    drawLine(x+w/2, y-h,x+w,y,color);
+    writeFastVLine(x, y, h, color);
+    writeFastVLine(x+w-1, y, h, color);
+    writeFastHLine(x, y+h-1, w, color);
+    endWrite();
+}
+
 void Adafruit_GFX_Button::press(boolean p) {
   laststate = currstate;
   currstate = p;
