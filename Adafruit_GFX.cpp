@@ -417,6 +417,20 @@ void Adafruit_GFX::drawTriangle(int16_t x0, int16_t y0,
     drawLine(x0, y0, x1, y1, color);
     drawLine(x1, y1, x2, y2, color);
     drawLine(x2, y2, x0, y0, color);
+
+}
+
+
+// Draw a hexagon
+void Adafruit_GFX::drawHexagon(int16_t x, int16_t y, int16_t w, int16_t h,
+        uint16_t color) {
+    startWrite();
+    drawLine(x, y, x+w/2, y-h, color);
+    drawLine(x+w/2, y-h,x+w,y,color);
+    writeFastVLine(x, y, h, color);
+    writeFastVLine(x+w-1, y, h, color);
+    writeFastHLine(x, y+h-1, w, color);
+    endWrite();
 }
 
 // Fill a triangle

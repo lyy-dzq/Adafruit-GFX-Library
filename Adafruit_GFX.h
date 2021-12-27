@@ -88,6 +88,10 @@ class Adafruit_GFX : public Print {
       int16_t w, int16_t h),
     drawRGBBitmap(int16_t x, int16_t y, uint16_t *bitmap,
       int16_t w, int16_t h),
+
+   drawHexagon(int16_t x, int16_t y, int16_t w, int16_t h,
+        uint16_t color),
+
     drawRGBBitmap(int16_t x, int16_t y,
       const uint16_t bitmap[], const uint8_t mask[],
       int16_t w, int16_t h),
